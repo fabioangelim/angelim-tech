@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  --fundo: #080b14;
+  --painel: #101626;
+  --texto: #f4f7ff;
+  --suave: #a7b0c5;
+  --azul: #5de0ff;
+  --roxo: #a78bfa;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+body {
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.6;
+}
+a { color: inherit; text-decoration: none; }
+.topo {
+  min-height: 76px; padding: 18px 8%;
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  background: rgba(8,11,20,.88); position: sticky; top: 0; z-index: 10;
+  backdrop-filter: blur(14px);
+}
+.logo { font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: 1px; }
+.logo span { color: var(--azul); margin-left: 5px; }
+nav { display: flex; gap: 28px; }
+nav a { color: var(--suave); font-size: .95rem; transition: color .2s; }
+nav a:hover { color: var(--azul); }
+
+.hero {
+  min-height: 570px; padding: 90px 10%; display: flex; align-items: center;
+  justify-content: space-between; gap: 50px; overflow: hidden;
+  background: radial-gradient(ellipse at 80% 45%, rgba(91,77,200,.19), transparent 38%),
+              radial-gradient(ellipse at 15% 15%, rgba(44,180,220,.10), transparent 35%);
+}
+.hero-conteudo { max-width: 600px; }
+.etiqueta { color: var(--azul); font-size: .76rem; font-weight: 700; letter-spacing: 2px; }
+h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; line-height: 1.12; }
+h1 { font-size: clamp(3rem, 6vw, 5.5rem); margin: 22px 0; letter-spacing: -3px; }
+h1 span, h2 span { background: linear-gradient(100deg, var(--azul), var(--roxo)); color: transparent; background-clip: text; }
+.intro { color: var(--suave); max-width: 520px; font-size: 1.08rem; margin-bottom: 30px; }
+.botao {
+  display: inline-flex; align-items: center; gap: 18px; padding: 13px 20px;
+  border-radius: 9px; background: linear-gradient(100deg, #52d8f4, #9b8af9);
+  color: #08101c; font-weight: 700; transition: transform .2s, box-shadow .2s;
+}
+.botao:hover { transform: translateY(-3px); box-shadow: 0 10px 35px rgba(93,224,255,.2); }
+.orbita { width: 290px; height: 290px; flex: 0 0 290px; position: relative; display: grid; place-items: center; }
+.circulo { position: absolute; border: 1px solid rgba(93,224,255,.35); border-radius: 50%; }
+.circulo-externo { width: 280px; height: 280px; transform: rotate(-25deg) scaleY(.62); box-shadow: 0 0 35px rgba(93,224,255,.08); }
+.circulo-interno { width: 205px; height: 205px; border-color: rgba(167,139,250,.55); transform: rotate(35deg) scaleY(.7); }
+.chip {
+  width: 112px; height: 112px; display: grid; place-items: center; border-radius: 28px;
+  font-size: 3.2rem; color: var(--azul); background: linear-gradient(145deg, #192943, #111322);
+  border: 1px solid rgba(93,224,255,.5); box-shadow: 0 0 60px rgba(93,224,255,.15);
+}
+.ponto { position: absolute; width: 12px; height: 12px; border-radius: 50%; background: var(--azul); box-shadow: 0 0 18px var(--azul); }
+.ponto-um { top: 44px; right: 38px; }.ponto-dois { bottom: 42px; left: 28px; background: var(--roxo); box-shadow: 0 0 18px var(--roxo); }
+
+.secao { padding: 95px 8%; background: #0c101d; }
+.cabecalho-secao { text-align: center; max-width: 650px; margin: 0 auto 42px; }
+h2 { font-size: clamp(2.1rem, 4vw, 3.2rem); margin: 14px 0; letter-spacing: -1px; }
+.cabecalho-secao > p:last-child, .contato > p:not(.etiqueta) { color: var(--suave); }
+.cartoes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; max-width: 1120px; margin: auto; }
+.cartao {
+  padding: 30px; border: 1px solid rgba(255,255,255,.09); border-radius: 16px;
+  background: linear-gradient(145deg, rgba(24,33,54,.85), rgba(14,18,31,.85));
+  transition: transform .25s, border-color .25s;
+}
+.cartao:hover { transform: translateY(-7px); border-color: rgba(93,224,255,.55); }
+.icone { color: var(--azul); font-size: 2.3rem; margin-bottom: 18px; }
+.cartao h3 { font-size: 1.35rem; margin-bottom: 12px; }
+.cartao p { color: var(--suave); font-size: .96rem; }
+
+.contato { text-align: center; padding: 90px 20px; background: radial-gradient(ellipse at center, rgba(102,81,211,.18), transparent 65%); }
+.contato h2 { margin: 18px 0; }
+.contato > p:not(.etiqueta) { max-width: 550px; margin: 0 auto 25px; }
+.botao-claro { margin-top: 3px; }
+footer { padding: 25px 8%; display: flex; justify-content: space-between; align-items: center; gap: 18px; border-top: 1px solid rgba(255,255,255,.08); }
+footer p { color: var(--suave); font-size: .82rem; }
+
+@media (max-width: 760px) {
+  .topo { padding: 16px 5%; flex-direction: column; }
+  nav { gap: 22px; }
+  .hero { padding: 70px 7%; text-align: center; flex-direction: column; }
+  .intro { margin-left: auto; margin-right: auto; }
+  .orbita { width: 230px; height: 230px; flex-basis: 230px; }
+  .circulo-externo { width: 225px; height: 225px; }
+  .circulo-interno { width: 165px; height: 165px; }
+  .chip { width: 90px; height: 90px; font-size: 2.6rem; }
+  .cartoes { grid-template-columns: 1fr; }
+  .secao { padding: 70px 7%; }
+  footer { flex-direction: column; text-align: center; }
+}
